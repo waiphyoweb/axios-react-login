@@ -14,8 +14,8 @@ html {
 
 body {
 	min-height: 100vh;
-	background: rgb(2,0,36);
-	background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 33%, rgba(0,212,255,1) 100%);
+	background: rgb(8,8,8);
+	background: linear-gradient(90deg, rgba(8,8,8,1) 0%, rgba(5,5,9,1) 45%, rgba(80,79,79,1) 80%);
 }
 
 .App {
@@ -35,7 +35,7 @@ section {
 	flex-direction: column;
 	justify-content: flex-start;
 	padding: 1rem;
-	background-color: rgba(0, 0, 0, 0.4);
+	background-color: rgba(85, 85, 85, 0.4);
 	border-radius: 10px;
 	font-family: 'Courier New', Courier, monospace;
 }
@@ -119,4 +119,90 @@ button {
 
 .line {
 	display: inline-block;
+}
+
+/* animation */
+.container {
+    background-color: black;
+}
+
+.meterior1 {
+position: absolute;
+top: 5%;
+left: -2%;
+}
+
+.meterior2 {
+position: absolute;
+top: 5%;
+right: 2%;
+}
+
+.planet {
+position: absolute;
+top: 25%;
+left: 10%;
+}
+
+.satellite {
+position: absolute;
+top: 30%;
+right: 10%;
+}
+
+.meterior3 {
+position: absolute;
+top: 50%;
+left: -2%;
+}
+
+.astronaut {
+position: absolute;
+top: 60%;
+left: 8%;
+}
+
+.small1 {
+position: absolute;
+top: 55%;
+right: 7%;
+}
+
+.small2 {
+position: absolute;
+top:50%;
+right: 8%;
+}
+
+.small3 {
+position: absolute;
+top:56%;
+right: 5%;
+}
+
+.flyingMeterior {
+position: absolute;
+top: 75%;
+left: 5%;
+}
+
+.meterior {
+position: absolute;
+top: 75%;
+right: 20%;
+}
+
+.meterior4 {
+position: absolute;
+top: 80%;
+right: 0%;
+}
+
+.background {
+position: absolute;
+top: 0;
+bottom: 0;
+left: 0;
+right: 0;
+z-index: -1;
 }

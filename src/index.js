@@ -11,7 +11,7 @@ root.render(
 	<React.StrictMode>
 		<AuthProvider>
 			<App />
-			<Animated />
+			{/* <Animated /> */}
 		</AuthProvider>
 	</React.StrictMode>
 );

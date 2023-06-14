@@ -6,7 +6,7 @@ const RequireAuth = () => {
     const { auth } = useAuth();
 
     return (
-        auth?.user ? <Outlet /> : <Login />
+        auth?.accessToken ? <Outlet /> : <Login />
     )
 }   
 

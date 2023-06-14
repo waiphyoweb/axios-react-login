@@ -4,6 +4,7 @@ import Login from './Login';
 import Layout from './Layout';
 import Home from './Home';
 import RequireAuth from './RequireAuth';
+import PersistLogin from './PersistLogin';
 
 
 
@@ -15,9 +16,10 @@ function App() {
 					<Route path='/' element={<Layout />} >
 						<Route path="register" exact element={<Register />} />
 						<Route path="login" element={<Login />} />
-						
-						<Route element={<RequireAuth />} >
-							<Route path='home' element={<Home />} />
+						<Route element={<PersistLogin />} >
+							<Route element={<RequireAuth />} >
+								<Route path='/' element={<Home />} />
+							</Route>
 						</Route>
 					</Route>
 				</Routes>

@@ -1,11 +1,13 @@
-import axios from './axios';
+import Cookies from 'universal-cookie';
+import { axiosPrivate } from './axiosInstance';
 import useAuth from './useAuth';
 
+const cookies = new Cookies();
 const useRefreshToken = () => {
     const { setAuth } = useAuth();
 
     const refresh = async () => {
-        const response = await axios.get('/refresh', {
+        const response = await axiosPrivate.get('/refresh', {
             withCredentials: true
         });
         // setAuth(prev => {
@@ -17,6 +19,7 @@ const useRefreshToken = () => {
         //     }
         // });
         setAuth({ accessToken: response.data.accessToken });
+        cookies.set('AT', response?.data?.accessToken, { path: '/', maxAge: 30, secure: true, })
         return response.data.accessToken;
     }
     return refresh;

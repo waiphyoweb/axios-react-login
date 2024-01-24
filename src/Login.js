@@ -1,9 +1,11 @@
 import { useRef, useState, useEffect } from 'react';
 import useAuth from './useAuth';
 import { useNavigate } from 'react-router-dom';
+import Cookies from 'universal-cookie';
+import axios from 'axios';
 
-import axios from './axios';
 const LOGIN_URL = '/auth';
+const cookies = new Cookies();
 
 const Login = () => {
 	const { setAuth } = useAuth();
@@ -29,15 +31,15 @@ const Login = () => {
 
 		try {
 			const response = await axios.post(
-				LOGIN_URL,
+				`http://localhost:3000${LOGIN_URL}`,
 				JSON.stringify({ user, pwd }),
 				{
 					headers: { 'Content-Type': 'application/json' },
 					withCredentials: true,
 				}
 			);
-
 			const accessToken = response?.data?.accessToken;
+			cookies.set("AT", accessToken, { path: "/", maxAge: 30, secure: true });
 			const roles = response?.data?.roles;
 			setAuth({ user, pwd, roles, accessToken });
 			setUser('');
